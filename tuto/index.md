@@ -28,3 +28,9 @@
 
 ### [interact with database via shell](/tuto/django_shell.md)
 1. `uv run manage.py shell`
+
+### models good practice
+- Add `__str__` method to models for better representation in admin and shell
+- Specify `related_name` for reverse relationships
+- Use custom model methods for common queries
+- Use `@classmethod` for model-level operations
