@@ -29,7 +29,7 @@
 ### [interact with database via shell](/tuto/django_shell.md)
 1. `uv run manage.py shell`
 
-### models good practice
+### models best practices
 - Add `__str__` method to models for better representation in admin and shell
 - Specify `related_name` for reverse relationships
 - Use custom model methods for common queries
@@ -39,3 +39,13 @@
 1. create superuser: `uv run manage.py createsuperuser`
 2. register models in polls.admin
 3. access http://localhost:8000/admin/
+
+## templates
+1. create directory polls/templates/polls/
+2. create template index.html
+3. create view to render template
+4. map view to url in polls.urls
+
+### views best practices
+- Whenever you create a form that alters data server-side, use `method="post"`
+- Since we’re creating a POST form, we need to include the `{% csrf_token %}` template tag inside the `<form>` element
