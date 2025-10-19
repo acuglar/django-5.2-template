@@ -49,3 +49,11 @@
 ### views best practices
 - Whenever you create a form that alters data server-side, use `method="post"`
 - Since we’re creating a POST form, we need to include the `{% csrf_token %}` template tag inside the `<form>` element
+
+## Tests
+- test save time
+- Tests don’t just identify problems, they prevent them
+- Tests make code more attractive
+
+1. create polls test in polls.tests
+2. `uv run manage.py test`
