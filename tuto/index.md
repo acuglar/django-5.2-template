@@ -57,3 +57,6 @@
 
 1. create polls test in polls.tests
 2. `uv run manage.py test`
+
+>>> from django.test.utils import setup_test_environment
+>>> setup_test_environment()
