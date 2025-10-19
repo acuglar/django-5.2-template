@@ -34,3 +34,8 @@
 - Specify `related_name` for reverse relationships
 - Use custom model methods for common queries
 - Use `@classmethod` for model-level operations
+
+### django admin site
+1. create superuser: `uv run manage.py createsuperuser`
+2. register models in polls.admin
+3. access http://localhost:8000/admin/
