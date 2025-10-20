@@ -72,3 +72,7 @@
 2. copy base_site.html from django installation to templates/admin/
 3. config.settings.TEMPLATES to include 'DIRS': [BASE_DIR / "templates"],
 4. modify base_site.html as needed
+
+## Django Debug Toolbar
+- Toolbar injetada no HTML via JavaScript
+- Templates sem <body> não funcionam corretamente

@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-ctf(m!maxb%0(&ie8=0_#v7okf1ovyjzc629#vnl63ac$hgfh@
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+INTERNAL_IPS = [
+    '127.0.0.1',
+    'localhost',
+]
 
 # Application definition
 
@@ -39,7 +42,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 THIRD_PARTY_APPS = [
-
+    'debug_toolbar',
 ]
 PROJECT_APPS = [
     'polls',
@@ -49,6 +52,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
