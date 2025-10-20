@@ -61,3 +61,8 @@
 
 >>> from django.test.utils import setup_test_environment
 >>> setup_test_environment()
+
+## Static files
+1. create directory polls/static/polls/
+2. create style.css in polls/static/polls/
+3. add link to stylesheet in template
