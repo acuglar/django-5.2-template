@@ -45,7 +45,7 @@ THIRD_PARTY_APPS = [
     'debug_toolbar',
 ]
 PROJECT_APPS = [
-    'polls',
+    'server.polls',
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
@@ -65,8 +65,8 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'], # global templates directory
-        'APP_DIRS': True, # look for templates inside app directories
+        'DIRS': [BASE_DIR / 'client' / 'templates'],  # global templates directory
+        'APP_DIRS': True,  # look for templates inside app directories
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -125,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
