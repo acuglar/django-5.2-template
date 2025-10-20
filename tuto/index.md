@@ -54,6 +54,7 @@
 - test save time
 - Tests don’t just identify problems, they prevent them
 - Tests make code more attractive
+- When testing, more is better
 
 1. create polls test in polls.tests
 2. `uv run manage.py test`
