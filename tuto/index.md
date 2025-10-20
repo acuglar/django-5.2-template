@@ -66,3 +66,9 @@
 1. create directory polls/static/polls/
 2. create style.css in polls/static/polls/
 3. add link to stylesheet in template
+
+## Override admin templates
+1. create directory templates/admin/
+2. copy base_site.html from django installation to templates/admin/
+3. config.settings.TEMPLATES to include 'DIRS': [BASE_DIR / "templates"],
+4. modify base_site.html as needed
