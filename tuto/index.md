@@ -80,3 +80,11 @@
 ## [django-requestlogs](https://pypi.org/project/django-requestlogs/)
 - require djangorestframework
 - Configurar no settings.py
+
+## context_processors
+
+## middleware
+
+## signals
+
+## utils
