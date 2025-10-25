@@ -73,6 +73,10 @@
 3. config.settings.TEMPLATES to include 'DIRS': [BASE_DIR / "templates"],
 4. modify base_site.html as needed
 
-## Django Debug Toolbar
+## [django-debug-toolbar](https://pypi.org/project/django-debug-toolbar/)
 - Toolbar injetada no HTML via JavaScript
 - Templates sem <body> não funcionam corretamente
+
+## [django-requestlogs](https://pypi.org/project/django-requestlogs/)
+- require djangorestframework
+- Configurar no settings.py

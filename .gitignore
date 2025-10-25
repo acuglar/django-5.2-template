@@ -9,5 +9,13 @@ wheels/
 # Virtual environments
 .venv
 
-# Virtual environments
+# Environment variables
 .env
+
+# Log files
+logs/
+*.log
+
+# Database files
+db.sqlite3
+*.sqlite3
