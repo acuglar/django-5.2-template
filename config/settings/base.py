@@ -58,6 +58,9 @@ MIDDLEWARE = [
     # django-requestlogs
     'requestlogs.middleware.RequestIdMiddleware',
     'requestlogs.middleware.RequestLogsMiddleware',
+
+    # custom middleware
+    'server.core.middleware.RequestTimingMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
