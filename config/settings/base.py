@@ -37,6 +37,7 @@ THIRD_PARTY_APPS = [
     'debug_toolbar',
 ]
 PROJECT_APPS = [
+    'server.core',
     'server.polls',
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
@@ -44,12 +45,17 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    # django-debug-toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # django-requestlogs
     'requestlogs.middleware.RequestIdMiddleware',
     'requestlogs.middleware.RequestLogsMiddleware',
 ]
@@ -59,15 +65,17 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # global templates directory
         'DIRS': [BASE_DIR / 'client' / 'templates'],
-        # look for templates inside app directories. Required for django-debug-toolbar
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #custom context processors
+                'server.core.context_processors.global_context'
             ],
         },
     },
@@ -122,7 +130,7 @@ REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'requestlogs.views.exception_handler',
 }
 
-LOG_DIR = BASE_DIR / "logs"
+LOG_DIR = BASE_DIR / 'logs'
 LOG_DIR.mkdir(exist_ok=True)
 
 LOGGING = {
@@ -132,7 +140,7 @@ LOGGING = {
         'requestlogs_to_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': f'{LOG_DIR}/requestlogs.log',
+            'filename': LOG_DIR / 'requestlogs.log',
         },
         'root': {
             'class': 'logging.StreamHandler',
