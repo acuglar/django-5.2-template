@@ -3,6 +3,8 @@ Django settings for config project.
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from django.contrib.messages import constants
+from django.contrib.messages import constants as messages
 from pathlib import Path
 import environ
 
@@ -185,4 +187,14 @@ REQUESTLOGS = {
     'IGNORE_USER_FIELD': None,
     'IGNORE_USERS': [],
     'IGNORE_PATHS': None,
+}
+
+# Config Messages
+# MESSAGE_LEVEL = messages.DEBUG
+MESSAGE_TAGS = {
+	# messages.DEBUG: 'alert-danger',
+	messages.INFO: 'alert-info',
+	messages.SUCCESS: 'alert-success',
+	messages.WARNING: 'alert-warning',
+	messages.ERROR: 'alert-danger',
 }

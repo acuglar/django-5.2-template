@@ -1,9 +1,16 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
+from django.contrib import messages
+
 
 def home_view(request):
-    """Renderiza a home page"""
+    messages.debug(request, "debug")
+    messages.info(request, "Nova atualização disponível.")
+    messages.success(request, "Operação concluída com sucesso!")
+    messages.warning(request, "Atenção: verifique os dados novamente.")
+    messages.error(request, "Erro ao processar requisição.")
+    
     return render(request, "pages/home.html")
 
 

@@ -88,3 +88,5 @@
 ## signals
 
 ## utils
+
+## [messages](https://docs.djangoproject.com/en/4.1/ref/contrib/messages/)
