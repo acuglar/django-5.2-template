@@ -19,6 +19,18 @@ DATABASES = {
     }
 }
 
+SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_COOKIE_SECURE = True  # Ensure session cookies are only sent over HTTPS
 CSRF_COOKIE_SECURE = True  # Ensure CSRF cookies are only sent over HTTPS
+
+
+CORS_ALLOWED_ORIGINS = [
+    "https://app.example.com",
+    "https://dashboard.example.org",
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_EXPOSE_HEADERS = ["Content-Type", "X-CSRFToken"]
+CORS_PREFLIGHT_MAX_AGE = 86400
+
+ADMINS = [(env('SUPER_USER')), (env('EMAIL'))]

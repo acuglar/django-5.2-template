@@ -37,6 +37,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'debug_toolbar',
+    'corsheaders',
 ]
 PROJECT_APPS = [
     'server.core',
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     # django-debug-toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 
+    # django-cors-headers
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
